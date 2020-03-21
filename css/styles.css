@@ -27,9 +27,9 @@ header h2 {
 }
 
 .row-content {
-    padding: 50px 0;
+    padding: 10px 0;
     border-bottom: 1px ridge;
-    min-height: 200px;
+    min-height: 20px;
 }
 
 .navbar {
@@ -41,4 +41,7 @@ header h2 {
 
 .carousel {
     border: solid #5637DD;
+}
+#numcampers {
+    txt-white
 }

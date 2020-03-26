@@ -43,5 +43,10 @@ header h2 {
     border: solid #5637DD;
 }
 #numcampers {
-    txt-white
+    color:white
+}
+#carouselButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }

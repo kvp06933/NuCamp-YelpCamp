@@ -6,19 +6,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  -->
 
-  <!-- Additional CSS must be placed after Bootstrap CSS -->
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
   <title>NuCamp: A Better Way To Camp</title>
 </head>
 
 <body>
-  <header class="jumbotron jumbotron-fluid">    
+  <header class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
         <div class="col-4 col-sm-3 col-md-2 align-self-center">
@@ -29,18 +32,21 @@
           <h2>a better way to camp</h2>
         </div>
         <div class="col-md-4 col-xl-2 mt-4">
-          <a role="button" class="btn btn-lg btn-info data" data-toggle="modal" data-target="#reserveModal">Reserve
+          <a role="button" class="btn btn-lg btn-info" id="reserveButton" data-toggle="modal" data-target="#reserveButton">Reserve
             Campsite</a>
         </div>
       </div>
     </div>
   </header>
-  <div id="reserveModal" class="modal fade" role="dialog">
+  <!--Reserve Campsite Modal-->
+  <div id="reserveModal" class="modal fade" role="dialog" aria-labelledby="reserveModal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header bg-info text-white">
           <h3 class="modal-title">Reserve a Campsite</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true"> &times;</span>
+          </button>
         </div>
         <div class="modal-body">
           <div class="container-fluid">
@@ -63,7 +69,7 @@
               <div class="form-group row">
                 <label class="col-sm-6 col-form-label" for="date">Date</label>
                 <div class="col-sm-6 ">
-                  <input type="text" name="date" id="date" class="form-control" placeholder="mm/dd/yyyy"> 
+                  <input type="text" name="date" id="date" class="form-control" placeholder="mm/dd/yyyy">
                 </div>
               </div>
               <div class="form-group row">
@@ -106,11 +112,12 @@
         </ul>
         <span class="navbar-text ml-auto">
           <a data-toggle="modal" data-target="#loginModal">
-            <i class="fa fa-sign-in"></i> Login</a>
-        </span>
+          <i class="fa fa-sign-in"></i> Login</a>
+      </span>
       </div>
     </div>
   </nav>
+  <!--Login Modal-->
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -148,6 +155,7 @@
       </div>
     </div>
   </div>
+  <!--Carousel-->
   <div class="container">
 
     <div class="row row-content">
@@ -192,100 +200,99 @@
             <span class="carousel-control-next-icon"></span>
             <span class="sr-only">Next</span>
           </a>
-           
-            <button class="btn btn-danger btn-sm" id="carouselButton">
-              <i class="fa fa-pause"></i>
-            </button>
-            
+
+          <button class="btn btn-danger btn-sm" id="carouselButton">
+            <i class="fa fa-pause"></i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-content align-items-center">
+    <div class="col-sm-4 order-sm-last col-md-3">
+      <h2 class="text-sm-right">Discover & Review</h2>
+    </div>
+    <div class="col">
+      <div class="media">
+        <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
+        <div class="media-body align-self-center">
+          <h3>Our Campsites</h3>
+          <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-content align-items center">
+    <div class="col-sm-4 col-md-3">
+      <h2>Featured Campsites</h2>
+    </div>
+    <div class="col">
+      <div class="media">
+        <div class="media-body align-self-center">
+          <h3>React Lake Campground</h3>
+          <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores
+            of
+            the pristine React Lake is a favorite for fly fishers.</p>
+        </div>
+        <img class="d-flex ml-3 img-thumbnail float-right" src="img/react-lake-thumb.jpg">
       </div>
     </div>
 
     <div class="row row-content align-items-center">
       <div class="col-sm-4 order-sm-last col-md-3">
-        <h2 class="text-sm-right">Discover & Review</h2>
+        <h2 class="text-sm-right">Our Community Partners</h2>
       </div>
       <div class="col">
         <div class="media">
-          <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
+          <img class="d-flex mr-3 img-thumbnail " src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters">
           <div class="media-body align-self-center">
-            <h3>Our Campsites</h3>
-            <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!
-            </p>
+            <h3>Bootstrap Outfitters</h3>
+            <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't
+              beat.</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row row-content align-items center">
-      <div class="col-sm-4 col-md-3">
-        <h2 class=>Featured Campsites</h2>
-      </div>
-      <div class="col">
-        <div class="media">
-          <div class="media-body align-self-center">
-            <h3>React Lake Campground</h3>
-            <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores
-              of
-              the pristine React Lake is a favorite for fly fishers.</p>
-          </div>
-          <img class="d-flex ml-3 img-thumbnail float-right" src="img/react-lake-thumb.jpg">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 col-sm-2 offset-1">
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="#">Sites</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
         </div>
-      </div>
-
-      <div class="row row-content align-items-center">
-        <div class="col-sm-4 order-sm-last col-md-3">
-          <h2 class="text-sm-right">Our Community Partners</h2>
+        <div class="col-6 col-sm-5 text-center">
+          <h5>Social</h5>
+          <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
+          <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+          <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
         </div>
-        <div class="col">
-          <div class="media">
-            <img class="d-flex mr-3 img-thumbnail " src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters">
-            <div class="media-body align-self-center">
-              <h3>Bootstrap Outfitters</h3>
-              <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't
-                beat.</p>
-            </div>
-          </div>
+        <div class="col-sm-4 text-center">
+          <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i>
+            1-206-555-1234</a><br />
+          <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i>
+            campsites@nucamp.co</a>
         </div>
       </div>
     </div>
-    
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 col-sm-2 offset-1">
-            <h5>Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="aboutus.html">About</a></li>
-              <li><a href="#">Sites</a></li>
-              <li><a href="contactus.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-sm-5 text-center">
-            <h5>Social</h5>
-            <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i
-                class="fa fa-instagram"></i></a>
-            <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
-            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
-            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
-          </div>
-          <div class="col-sm-4 text-center">
-            <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i>
-              1-206-555-1234</a><br />
-            <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i>
-              campsites@nucamp.co</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script src="js/scripts.js">
-      
-  </script>
+  </footer>
+  <!-- build:js js/main.js -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>
